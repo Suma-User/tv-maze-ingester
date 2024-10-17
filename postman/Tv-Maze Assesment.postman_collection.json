@@ -1,0 +1,35 @@
+{
+  "info": {
+    "_postman_id": "03011468-50ca-42c3-aa43-3c0fffc16893",
+    "name": "Tv-Maze Assesment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37842664"
+  },
+  "item": [
+    {
+      "name": "http://localhost:5002/get-shows?page=1&limit=10",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5002/get-shows?page=2&limit=10",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5002",
+          "path": ["get-shows"],
+          "query": [
+            {
+              "key": "page",
+              "value": "2"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

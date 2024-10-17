@@ -1,0 +1,47 @@
+{
+  "name": "tv-maze-ingester",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "test": "SET NODE_ENV=test & mocha test/**/*.js",
+    "lint": "eslint src shared"
+  },
+  "author": "Vinay Muley",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "1.6.0",
+    "body-parser": "1.20.3",
+    "dotenv": "16.0.3",
+    "express": "4.18.2",
+    "fast-glob": "3.2.12",
+    "helmet": "6.0.0",
+    "joi": "14.3.1",
+    "lodash": "4.17.21",
+    "mongoose": "6.11.3",
+    "node-cron": "3.0.3",
+    "normalize-path": "^3.0.0",
+    "shared": "file:./shared"
+  },
+  "devDependencies": {
+    "chai": "4.3.4",
+    "eslint": "8.6.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-prettier": "3.6.0",
+    "eslint-plugin-import": "2.25.4",
+    "eslint-plugin-prettier": "3.3.1",
+    "mocha": "10.1.0",
+    "mocha-junit-reporter": "2.0.2",
+    "nodemon": "2.0.20",
+    "prettier": "1.19.1",
+    "sinon": "7.5.0"
+  },
+  "engines": {
+    "node": "20.16.0",
+    "npm": "10.8.1"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}
