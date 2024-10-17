@@ -33,6 +33,7 @@ describe('buildAggregationPipeline', () => {
           { $sort: sort },
           {
             $project: {
+              _id : 0,
               id: '$person.id',
               name: '$person.name',
               birthday: '$person.birthday',
@@ -45,6 +46,7 @@ describe('buildAggregationPipeline', () => {
 
     expect(result[1]).to.deep.equal({
       $project: {
+        _id : 0,
         id: '$id',
         name: 1,
         cast: '$Cast',
@@ -89,6 +91,7 @@ describe('buildAggregationPipeline', () => {
 
     expect(result[2]).to.deep.equal({ $skip: 10 });
 
+
   });
 
   it('should correctly project the cast fields', () => {
@@ -104,6 +107,7 @@ describe('buildAggregationPipeline', () => {
 
     expect(projectStage).to.deep.equal({
       $project: {
+        _id : 0,
         id: '$person.id',
         name: '$person.name',
         birthday: '$person.birthday',

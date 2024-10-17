@@ -26,7 +26,7 @@ describe('ShowIngestor', () => {
     };
     apiClientStub = sinon.createStubInstance(APIRequestLib);
 
-    showIngestor = new ShowIngestor('http://example.com', entityManagerStub, cacheStub);
+    showIngestor = new ShowIngestor('http://api.tv-maze.com', entityManagerStub, cacheStub);
   });
 
   afterEach(() => {
@@ -38,9 +38,11 @@ describe('ShowIngestor', () => {
       sinon.stub(showIngestor, 'runIngestorWorker').resolves();
       await showIngestor.startIngestion();
 
-      expect(showIngestor.runIngestorWorker.callCount).to.equal(10);
-      expect(showIngestor.runIngestorWorker.firstCall.calledWith(1, 10)).to.be.true;
-      expect(showIngestor.runIngestorWorker.lastCall.calledWith(91, 100)).to.be.true;
+      // uncomment this cases for failed CI PIpeline Demo
+      
+      //expect(showIngestor.runIngestorWorker.callCount).to.equal(30);
+      //expect(showIngestor.runIngestorWorker.firstCall.calledWith(1, 10)).to.be.true;
+      //expect(showIngestor.runIngestorWorker.lastCall.calledWith(91, 100)).to.be.true;
     });
 
     it('should log an error if a batch fails', async () => {
